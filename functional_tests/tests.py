@@ -59,6 +59,7 @@ class NewVisitorTest(LiveServerTestCase):
 
         ## We use a new browser session to make sure that no information
         ## of Edith's is coming through from cookies etc
+
         self.browser.quit()
         self.browser = webdriver.Firefox()
 
@@ -85,7 +86,7 @@ class NewVisitorTest(LiveServerTestCase):
         page_text = self.browser.find_element_by_tag_name('body').text
         self.assertNotIn('Buy peacock feathers', page_text)
         self.assertIn('Buy milk', page_text)
-
+        time.sleep(5)
         # Satisfied, they both go back to sleep
 '''
     def test_can_start_a_list_and_retrieve_it_later(self):
